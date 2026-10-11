@@ -27,3 +27,5 @@ nvidiaProvider({
   role: finalMessage.role,
   content: finalMessage.content
 })
+
+const alpha = "here is the won of the tie and the update of the alpha one is the one "
