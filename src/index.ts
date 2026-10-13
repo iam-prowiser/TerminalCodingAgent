@@ -18,14 +18,16 @@ if (!values.prompt) {
 
 const prompt = values.prompt;
 
-const finalMessage:Message = {
+const finalMessage: Message = {
   role: "user",
   content: prompt
 }
 
-nvidiaProvider({
-  role: finalMessage.role,
-  content: finalMessage.content
-})
-
-const alpha = "here is the won of the tie and the update of the alpha one is the one "
+for await (const events of nvidiaProvider(finalMessage)) {
+  if (events.type === "reasoning_delta") {
+    process.stdout.write(events.content)
+  }
+  if (events.type === "text_delta") {
+    process.stdout.write(events.content)
+  }
+}
