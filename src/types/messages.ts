@@ -24,3 +24,4 @@ export type StreamEvent = TextDelta | ReasoningDelta | Done
 export type NvidiaDelta = OpenAI.ChatCompletionChunk.Choice.Delta & {
     reasoning_content?: string;
 }
+
